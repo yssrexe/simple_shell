@@ -1,26 +1,26 @@
 #include "shell.h"
 
-char	*fn_strdup(const char *src)
+char	*fn_strdup(const char *str)
 {
-	char	*new;
+	char	*n;
 	int		i;
-	int		size;
+	int		s;
 
-	size = 0;
-	while (src[size])
-		size++;
+	s = 0;
+	while (str[s])
+		s++;
 
-	if (!(new = malloc(sizeof(char) * (size + 1))))
+	if (!(n = malloc(sizeof(char) * (s + 1))))
 		return (NULL);
 
 	i = 0;
-	while (src[i])
+	while (str[i])
 	{
-		new[i] = src[i];
+		n[i] = str[i];
 		i++;
 	}
-	new[i] = '\0';
-	return (new);
+	n[i] = '\0';
+	return (n);
 }
 
 int	fn_strcmp(char *s1, char *s2)
