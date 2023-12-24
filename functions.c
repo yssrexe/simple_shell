@@ -10,7 +10,9 @@ char	*fn_strdup(const char *str)
 	while (str[s])
 		s++;
 
-	if (!(n = malloc(sizeof(char) * (s + 1))))
+n = malloc(sizeof(char) * (s + 1));
+
+	if (n = NULL)
 		return (NULL);
 
 	i = 0;
