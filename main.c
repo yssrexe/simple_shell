@@ -2,9 +2,9 @@
 
 int main(int arc, char **arv)
 {
-    
+
     char *l = NULL;
-    char **cmd = NULL;
+    /* char **cmd = NULL; */
     int exc = 0;
     (void)arc;
     (void)arv;
@@ -19,7 +19,7 @@ int main(int arc, char **arv)
         }
         
         free(l);
-        cmd = fn_split(l);
+      /*cmd = fn_split(l); */
        /* exc = fn_execute(cmd, arv); */ 
     }
 }

@@ -12,7 +12,7 @@ char	*fn_strdup(const char *str)
 
   n = malloc(sizeof(char) * (s + 1));
 
-	if (n = NULL)
+	if (n == NULL)
 		return (NULL);
 
 	i = 0;
