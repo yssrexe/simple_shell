@@ -1,16 +1,28 @@
 #include "shell.h"
 
+int fn_strlen(char *str)
+{
+	int i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
 char	*fn_strdup(const char *str)
 {
 	char	*n;
 	int		i;
 	int		s;
 
+	if (str == NULL)
+		return (NULL);
 	s = 0;
 	while (str[s])
 		s++;
 
-  n = malloc(sizeof(char) * (s + 1));
+  	n = malloc(sizeof(char) * (s + 1));
 
 	if (n == NULL)
 		return (NULL);

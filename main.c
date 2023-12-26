@@ -4,8 +4,8 @@ int main(int arc, char **arv)
 {
 
     char *l = NULL;
-    /* char **cmd = NULL; */
-    int exc = 0;
+    char **cmd = NULL;
+    int exc = 0, i = 0;
     (void)arc;
     (void)arv;
     while (true)
@@ -18,8 +18,16 @@ int main(int arc, char **arv)
             return exc;
         }
         
-        free(l);
-      /*cmd = fn_split(l); */
+        cmd = fn_tokenizing(l);
+        if (cmd == NULL)
+            continue;
+        for (i = 0; cmd[i]; i++)
+        {
+            printf("%s\n", cmd[i]);
+        }
+        
+        
+        
        /* exc = fn_execute(cmd, arv); */ 
     }
 }
