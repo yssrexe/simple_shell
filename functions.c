@@ -1,5 +1,9 @@
 #include "shell.h"
-
+/**
+ * fn_strlen - lenght of string
+ * @s:char
+ * Return:int
+ */
 int fn_strlen(char *str)
 {
 	int i = 0;
@@ -9,6 +13,12 @@ int fn_strlen(char *str)
 	}
 	return (i);
 }
+
+/**
+ * fn_strdup - Duplicate A String
+ * @str:String
+ * Return: Duplicate String Failed Null
+ */
 
 char	*fn_strdup(const char *str)
 {
@@ -36,7 +46,13 @@ char	*fn_strdup(const char *str)
 	n[i] = '\0';
 	return (n);
 }
-
+/**
+ * fn_strcmp - Compare Two String
+ * @s1:String 1
+ * @s2:String 2
+ * Return: 0 If Identical Otherwise How Much Diffrent
+ */
+ 
 int	fn_strcmp(char *s1, char *s2)
 {
 	unsigned int	i;
@@ -49,6 +65,12 @@ int	fn_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
+/**
+ * fn_strcat - Concat Two String
+ * @dest:First String
+ * @src:Second String
+ * Return:First String + Second String Char *
+ */
 char	*fn_strcat(char *dest, char *src)
 {
 	int	i;
@@ -69,7 +91,12 @@ char	*fn_strcat(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
+/**
+ * ft_strcpy - Copie Source To Destination Char
+ * @dest:Destination
+ * @src:Source
+ * Return: Copie Of Char *
+ */
 char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
@@ -83,4 +110,3 @@ char	*ft_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-

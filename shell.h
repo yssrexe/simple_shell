@@ -23,4 +23,11 @@ char	*fn_strcat(char *dest, char *src);
 char	*ft_strcpy(char *dest, char *src);
 int     fn_strlen(char *str);
 
+/* function_2*/
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void ft_putchar(char *c)
+int	ft_atoi(char *str)
+
+
+
 #endif
