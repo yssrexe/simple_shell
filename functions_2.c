@@ -2,7 +2,7 @@
 
 /**
  * ft_atoi - convert to a int
- * @s:string
+ * @str:string
  * Return:int
  */
 
@@ -41,9 +41,9 @@ int	ft_atoi(char *str)
  */
 
 
-void ft_putchar(char *c)
+void	ft_putchar(char *c)
 {
-    write(1, &c, 1);
+	write(1, &c, 1);
 }
 
 /**
@@ -55,19 +55,19 @@ void ft_putchar(char *c)
  */
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-    unsigned int i;
+	unsigned int i;
 
-    i = 0;
+	i = 0;
 
-    while(src[i] !='\0' && i < n)
-    {
-        dest[i]=src[i];
-        i++;
-    }
-    while(i < n)
-    {
-        dest[i]='\0';
-        i++;
-    }
-    return(dest);
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest)
 }

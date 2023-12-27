@@ -4,9 +4,11 @@
  * @s:char
  * Return:int
  */
-int fn_strlen(char *str)
+
+int	fn_strlen(char *str)
 {
-	int i = 0;
+	int	i = 0;
+
 	while (str[i])
 	{
 		i++;
@@ -32,7 +34,7 @@ char	*fn_strdup(const char *str)
 	while (str[s])
 		s++;
 
-  	n = malloc(sizeof(char) * (s + 1));
+	n = malloc(sizeof(char) * (s + 1));
 
 	if (n == NULL)
 		return (NULL);
@@ -52,7 +54,7 @@ char	*fn_strdup(const char *str)
  * @s2:String 2
  * Return: 0 If Identical Otherwise How Much Diffrent
  */
- 
+
 int	fn_strcmp(char *s1, char *s2)
 {
 	unsigned int	i;
