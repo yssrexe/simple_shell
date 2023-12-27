@@ -46,7 +46,7 @@ void	fn_putchar(char *c)
 }
 
 /**
- * ft_strncpy - copie a string
+ * fn_strncpy - copie a string
  * @dest:char
  *  @src:char
  * @n:int

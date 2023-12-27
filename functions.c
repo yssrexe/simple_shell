@@ -94,12 +94,12 @@ char	*fn_strcat(char *dest, char *src)
 	return (dest);
 }
 /**
- * ft_strcpy - Copie Source To Destination Char
+ * fn_strcpy - Copie Source To Destination Char
  * @dest:Destination
  * @src:Source
  * Return: Copie Of Char *
  */
-char	*ft_strcpy(char *dest, char *src)
+char	*fn_strcpy(char *dest, char *src)
 {
 	int	i;
 
