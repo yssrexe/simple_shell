@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * fn_strlen - lenght of string
- * @s:char
+ * @str:char
  * Return:int
  */
 
