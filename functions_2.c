@@ -1,39 +1,38 @@
 #include "shell.h"
 
 /**
- * ft_atoi - convert to a int
+ * fn_atoi - convert to a int
  * @str:string
  * Return:int
  */
 
-int	ft_atoi(char *str)
+int	fn_atoi(const char *str)
 {
-	int	i;
-	int	sub;
-	int	nb;
+    int i = 0;
+    int sign = 1;
+    int result = 0;
+    while (str[i] == ' ' || str[i] == '\t')
+        i++;
 
-	sub = 1;
-	nb = 0;
-	i = 0;
-	while (str[i] && (str[i] == ' '
-			|| str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			sub *= -1;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		nb = nb * 10 + (str[i] - 48);
-		i++;
-	}
-	return (nb * sub);
+    if (str[i] == 45 || str[i] == 43)
+    {
+        if (str[i] == 45)
+        {
+            sign=-1;
+        }
+        i++;
+    }
+
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        result = result * 10 + (str[i] - '0');
+        i++;
+    }
+    return result * sign;
 }
+
 /**
- * ft_putchar - writes the character c to stdout
+ * fn_putchar - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
@@ -41,7 +40,7 @@ int	ft_atoi(char *str)
  */
 
 
-void	ft_putchar(char *c)
+void	fn_putchar(char *c)
 {
 	write(1, &c, 1);
 }
@@ -53,7 +52,7 @@ void	ft_putchar(char *c)
  * @n:int
  * Return:char
  */
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*fn_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
@@ -69,5 +68,5 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = '\0';
 		i++;
 	}
-	return (dest)
+	return (dest);
 }
