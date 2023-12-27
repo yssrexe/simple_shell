@@ -30,8 +30,8 @@ char *ft_strcpy(char *dest, char *src);
 int fn_strlen(char *str);
 
 /* function_2 file*/
+int	fn_atoi(const char *str);
 char *fn_strncpy(char *dest, char *src, unsigned int n);
 void fn_putchar(char *c);
-int fn_atoi(const char *str);
 
 #endif
