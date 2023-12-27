@@ -15,5 +15,5 @@ char *read_cmd(void)
         free(l);
         return NULL;
     }
-    return l;
+    return (l);
 }
