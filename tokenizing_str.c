@@ -8,7 +8,7 @@ char **fn_tokenizing(char *str)
     char **cmd = NULL;
     char *lst = NULL;
 
-    if (!str)
+    if (str == NULL)
         return (NULL);
     lst = fn_strdup(str);
 
@@ -25,11 +25,14 @@ char **fn_tokenizing(char *str)
         loop++;
         tkn = strtok(NULL, MNTS);
     }
-    free(lst), lst = NULL;
+    free(lst);
+    lst = NULL;
+
     cmd = malloc(sizeof(char *) * (loop + 1));
-    if (!cmd)
+    if (cmd == NULL)
     {
-        free(str), cmd = NULL;
+        free(str);
+        cmd = NULL;
         return (NULL);
     }
 
@@ -39,7 +42,8 @@ char **fn_tokenizing(char *str)
         cmd[i++] = fn_strdup(tkn);
         tkn = strtok(NULL, MNTS);
     }
-    free(str), str = NULL;
+    free(str);
+    str = NULL;
     cmd[i] = NULL;
     return (cmd);
 }

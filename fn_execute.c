@@ -12,7 +12,7 @@ int fn_execute(char **cmd, char **arv)
         {
             perror(arv[0]);
             freeparam(cmd);
-            exit(127);
+            exit(EXIT_FAILURE); /*127*/
         }
     }
     else
