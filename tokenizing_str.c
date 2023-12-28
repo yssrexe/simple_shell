@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * fn_tokenizing - tokenizes a string based on delimiters
+ * @str: string
+ * Return: return null
+*/
+
 char **fn_tokenizing(char *str)
 {
     char *tkn;

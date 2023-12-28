@@ -2,7 +2,7 @@
 /**
  * fn_execute - execute function
  * @cmd: commands
- * @arv: argument victor
+ * @arv: argument value
  * Return: executation cmd
  */
 
