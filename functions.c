@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
- * fn_strlen - lenght of string
- * @str:char
- * Return:int
+ * fn_strlen - string lenght
+ * @str: string
+ * Return:number
  */
 
 int	fn_strlen(char *str)
@@ -49,10 +49,10 @@ char	*fn_strdup(const char *str)
 	return (n);
 }
 /**
- * fn_strcmp - Compare Two String
- * @s1:String 1
- * @s2:String 2
- * Return: 0 If Identical Otherwise How Much Diffrent
+ * fn_strcmp - Compare 2 Strings
+ * @s1:1st str
+ * @s2:2nd str
+ * Return: return 1st str - 2nd str
  */
 
 int	fn_strcmp(char *s1, char *s2)
@@ -68,10 +68,10 @@ int	fn_strcmp(char *s1, char *s2)
 }
 
 /**
- * fn_strcat - Concat Two String
- * @dest:First String
- * @src:Second String
- * Return:First String + Second String Char *
+ * fn_strcat - concat two Strings
+ * @dest:1st Str
+ * @src:2nd Str
+ * Return: 1st Str + 2nd Str
  */
 char	*fn_strcat(char *dest, char *src)
 {
@@ -94,10 +94,10 @@ char	*fn_strcat(char *dest, char *src)
 	return (dest);
 }
 /**
- * fn_strcpy - Copie Source To Destination Char
- * @dest:Destination
- * @src:Source
- * Return: Copie Of Char *
+ * fn_strcpy - copie src to dest
+ * @dest: dest
+ * @src: src
+ * Return: return dest
  */
 char	*fn_strcpy(char *dest, char *src)
 {
