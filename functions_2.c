@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * fn_atoi - convert to a int
- * @str:string
- * Return:int
+ * fn_atoi - convert string to integer
+ * @str: string
+ * Return: numbers
  */
 
 int	fn_atoi(const char *str)
@@ -31,11 +31,8 @@ int	fn_atoi(const char *str)
 }
 
 /**
- * fn_putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * fn_putchar - write the char
+ * @c: character
  */
 
 
@@ -46,10 +43,10 @@ void	fn_putchar(char *c)
 
 /**
  * fn_strncpy - copie a string
- * @dest:char
- *  @src:char
- * @n:int
- * Return:char
+ * @dest: destination
+ *  @src: source
+ * @n: num
+ * Return: return the destination
  */
 char	*fn_strncpy(char *dest, char *src, unsigned int n)
 {
