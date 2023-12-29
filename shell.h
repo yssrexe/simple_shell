@@ -34,4 +34,7 @@ int	fn_atoi(const char *str);
 char *fn_strncpy(char *dest, char *src, unsigned int n);
 void fn_putchar(char *c);
 
+/*get path and env*/
+char *fn_getenv(char *str);
+
 #endif
