@@ -10,22 +10,34 @@ int	fn_execute(char **cmd, char **arv)
 {
 	pid_t	son;
 	int	exc;
+	char *tst_c;
 
+	tst_c = fn_getpath(cmd[0]);
+	if (tst_c == NULL)
+	{
+		 
+		freeparam(cmd);
+		return(127);
+	}
+	
 	son = fork();
 	if (son == 0)
 	{
-		if (execve(cmd[0], cmd, environ) == -1)
+		if (execve(tst_c, cmd, environ) == -1)
 		{
-			perror(arv[0]);
+			free(tst_c);
+			tst_c = NULL;
 			freeparam(cmd);
-			exit(127); /*127*/
 		}
 	}
 	else
 	{
 		waitpid(son, &exc, 0);
 		freeparam(cmd);
+		free(tst_c);
+		tst_c = NULL;
 	}
 	return (WEXITSTATUS(exc));
 }
 
+/*min 40*/

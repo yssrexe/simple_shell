@@ -36,5 +36,5 @@ void fn_putchar(char *c);
 
 /*get path and env*/
 char *fn_getenv(char *str);
-
+char *fn_getpath(char *cmd);
 #endif
