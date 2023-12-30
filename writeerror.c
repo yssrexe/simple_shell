@@ -10,6 +10,6 @@ void writerror(char *sm, char *command ,int ind)
     fn_putstr(": ");
     fn_putstr(command);
     fn_putstr(": not found\n");
-    
+
     free(ken);
 }

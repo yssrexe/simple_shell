@@ -20,7 +20,7 @@ int	main(int arc, char **arv)
 		if (l == NULL)
 		{
 			if (isatty(0))
-				write(1, "\n", 1);
+				fn_putchar("\n");
 			return (exc);
 		}
 		num++;

@@ -39,11 +39,12 @@ char *fn_getpath(char *cmd)
 {
     struct stat str;
     int num = 0;
-    char* fcd = NULL, *environ_p = fn_getenv("PATH"), *dst = strtok(environ_p, ":");
+    char* fcd = NULL, *dst,*environ_p = fn_getenv("PATH");
     
     if (environ_p == NULL)
         return (NULL);
     
+    dst = strtok(environ_p, ":");
     while (cmd[num])
     {
         if (cmd[num] == '/')

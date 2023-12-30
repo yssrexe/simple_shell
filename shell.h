@@ -33,8 +33,9 @@ int fn_strlen(char *str);
 int	fn_atoi(const char *str);
 char *fn_strncpy(char *dest, char *src, unsigned int n);
 void fn_putchar(char *c);
-char	*fn_itoa(int nbr);
+char	*fn_itoa(int nb);
 void fn_putstr(char *str);
+int	len(long nb);
 
 /*get path and env*/
 char *fn_getenv(char *str);

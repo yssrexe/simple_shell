@@ -67,27 +67,49 @@ char	*fn_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
-char	*fn_itoa(int nbr)
+int	len(long nb)
 {
-    char	*str;
-    long	tmp;
-    int		length;
-    
-    tmp = nbr;
-    length = (nbr <= 0 ? 2 : 1);
-    while (nbr && ++length)
-        nbr /= 10;
-    if (!(str = (char *)malloc(sizeof(char) * length)))
-        return (NULL);
-    str[--length] = '\0';
-    if (tmp <= 0)
-        str[0] = (tmp < 0 ? '-' : '0');
-    while (tmp)
-    {
-        str[--length] = (tmp < 0 ? -tmp : tmp) % 10 + '0';
-        tmp /= 10;
-    }
-    return (str);
+	int	len = 0;
+	if (nb < 0)
+	{
+		nb *= -1;
+		len++;
+	}
+	while (nb > 0)
+	{
+		nb /= 10;
+		len++;
+	}
+	return(len);
+}
+char	*fn_itoa(int nb)
+{
+	char	*str;
+	long	n;
+	int	i;
+
+	n = nb;
+	i = len(n);
+	if(!(str = (char *)malloc(i + 1)))
+		return(0);
+	str[i--] = '\0';
+	if (n == 0)
+	{
+		str[0] = 48;
+		return(str);
+	}
+	if(n < 0)
+	{
+		str[0] = '-';
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		str[i] = 48 + (n % 10);
+		n /= 10;
+		i--;
+	}
+	return (str);
 }
 
 void fn_putstr(char *str)

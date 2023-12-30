@@ -15,7 +15,7 @@ int	fn_execute(char **cmd, char **arv, int num)
 	tst_c = fn_getpath(cmd[0]);
 	if (tst_c == NULL)
 	{
-		writerror(arv[0], cmd[0],num); 
+		writerror(arv[0], cmd[0], num); 
 		freeparam(cmd);
 		return(127);
 	}
