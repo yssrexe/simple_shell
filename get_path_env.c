@@ -76,13 +76,3 @@ char *fn_getpath(char *cmd)
     free(environ_p);
     return (NULL);
 }
-
-int main(int ac, char **av)
-{
-    char *full_cmd = fn_getpath(av[1]);
-    if (full_cmd)
-        printf("%s\n", full_cmd);
-    else
-        printf("does not exist\n");
-    
-}

@@ -20,7 +20,7 @@ extern char **environ;
 char *read_cmd(void);
 char **fn_tokenizing(char *str);
 void freeparam(char **str);
-int fn_execute(char **cmd, char **arv);
+int fn_execute(char **cmd, char **arv, int num);
 
 /*functions1 file*/
 char *fn_strdup(const char *src);
@@ -33,8 +33,10 @@ int fn_strlen(char *str);
 int	fn_atoi(const char *str);
 char *fn_strncpy(char *dest, char *src, unsigned int n);
 void fn_putchar(char *c);
+char	*fn_itoa(int nbr);
 
 /*get path and env*/
 char *fn_getenv(char *str);
 char *fn_getpath(char *cmd);
+void writerror(char *sm, char *command ,int ind);
 #endif

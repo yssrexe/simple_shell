@@ -6,7 +6,7 @@
  * Return: executation cmd
  */
 
-int	fn_execute(char **cmd, char **arv)
+int	fn_execute(char **cmd, char **arv, int num)
 {
 	pid_t	son;
 	int	exc;
@@ -15,7 +15,7 @@ int	fn_execute(char **cmd, char **arv)
 	tst_c = fn_getpath(cmd[0]);
 	if (tst_c == NULL)
 	{
-		 
+		writerror(arv[0], cmd[0],num); 
 		freeparam(cmd);
 		return(127);
 	}

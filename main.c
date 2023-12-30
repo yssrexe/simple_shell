@@ -11,7 +11,7 @@ int	main(int arc, char **arv)
 
 	char	*l = NULL;
 	char	**cmd = NULL;
-	int		exc = 0;
+	int		exc = 0, num = 0;
 	(void)arc;
 
 	while (true)
@@ -23,11 +23,11 @@ int	main(int arc, char **arv)
 				write(1, "\n", 1);
 			return (exc);
 		}
-
+		num++;
 		cmd = fn_tokenizing(l);
 		if (cmd == NULL)
 			continue;
 
-		exc = fn_execute(cmd, arv);
+		exc = fn_execute(cmd, arv, num);
 	}
 }
