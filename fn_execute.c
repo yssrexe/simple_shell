@@ -40,4 +40,3 @@ int	fn_execute(char **cmd, char **arv, int num)
 	return (WEXITSTATUS(exc));
 }
 
-/*min 40*/
