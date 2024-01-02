@@ -45,8 +45,8 @@ void writerror(char *sm, char *command ,int ind);
 
 /*handels*/
 int check_builtins(char *cmd);
-void handls_bl(char **cmd, char **arv ,int st ,int i);
-void write_env(char **cmd, int set);
-void perform_exit(char **cmd, int set);
+void handls_bl(char **cmd, char **arv ,int *st ,int i);
+void write_env(char **cmd, int *set);
+void perform_exit(char **cmd, int *set);
 
 #endif

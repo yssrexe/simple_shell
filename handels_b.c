@@ -15,7 +15,7 @@ int check_builtins(char *cmd)
 }
 
 
-void handls_bl(char **cmd, char **arv ,int st ,int i)
+void handls_bl(char **cmd, char **arv ,int *st ,int i)
 {
 	(void)arv;
 	(void)i;
@@ -31,10 +31,9 @@ void handls_bl(char **cmd, char **arv ,int st ,int i)
     
 }
 
-void write_env(char **cmd, int set)
+void write_env(char **cmd, int *set)
 {
 	int i = 0;
-	(void)set;
 
 	while (environ[i])
 	{
@@ -43,10 +42,11 @@ void write_env(char **cmd, int set)
         i++;
 	}
 	freeparam(cmd);
+	(*set) = 0;
 }
 
-void perform_exit(char **cmd, int set)
+void perform_exit(char **cmd, int *set)
 {
     freeparam(cmd);
-	exit(set);
+	exit(*set);
 }

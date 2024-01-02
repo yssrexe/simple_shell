@@ -30,7 +30,7 @@ int	main(int arc, char **arv)
 
 		if (check_builtins(cmd[0]) == 1)
 		{
-			handls_bl(cmd ,arv, exc , num);
+			handls_bl(cmd ,arv, &exc , num);
 		}
 		else
 			exc = fn_execute(cmd, arv, num);
