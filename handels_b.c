@@ -18,13 +18,13 @@ int check_builtins(char *cmd)
 void handls_bl(char **cmd, char **arv ,int *st ,int i)
 {
 
-    if (fn_strcmp(cmd[0], "env") == 0)
-    {
-        write_env(cmd, st);
-    }
-    else if (fn_strcmp(cmd[0], "exit") == 0)
+    if (fn_strcmp(cmd[0], "exit") == 0)
     {
         perform_exit(cmd, arv, st, i);
+    }
+    else if (fn_strcmp(cmd[0], "env") == 0)
+    {
+        write_env(cmd, st);
     }
     
 }
@@ -50,7 +50,7 @@ void perform_exit(char **cmd, char **arv, int *set , int i)
 
 	if (cmd[1] != NULL)
 	{
-		if (check_value(cmd[1]))
+		if (check_value(cmd[1]) == 1)
 		{
 			per_ext = fn_atoi(cmd[1]);
 		}
