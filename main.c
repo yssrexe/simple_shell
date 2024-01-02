@@ -28,6 +28,11 @@ int	main(int arc, char **arv)
 		if (cmd == NULL)
 			continue;
 
-		exc = fn_execute(cmd, arv, num);
+		if (check_builtins(cmd[0]) == 1)
+		{
+			handls_bl(cmd ,arv, exc , num);
+		}
+		else
+			exc = fn_execute(cmd, arv, num);
 	}
 }

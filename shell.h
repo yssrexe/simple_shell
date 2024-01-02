@@ -16,6 +16,7 @@
 #define MNTS " \t\n"
 extern char **environ;
 
+
 /*main functions*/
 char *read_cmd(void);
 char **fn_tokenizing(char *str);
@@ -41,4 +42,11 @@ int	len(long nb);
 char *fn_getenv(char *str);
 char *fn_getpath(char *cmd);
 void writerror(char *sm, char *command ,int ind);
+
+/*handels*/
+int check_builtins(char *cmd);
+void handls_bl(char **cmd, char **arv ,int st ,int i);
+void write_env(char **cmd, int set);
+void perform_exit(char **cmd, int set);
+
 #endif
