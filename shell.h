@@ -41,13 +41,13 @@ int	len(long nb);
 /*get path and env*/
 char *fn_getenv(char *str);
 char *fn_getpath(char *cmd);
-void writerror(char *sm, char *command ,int ind);
+void writerror(char *sm, char *command, int ind);
 
 /*handels*/
 int check_builtins(char *cmd);
-void handls_bl(char **cmd, char **arv ,int *st ,int i);
+void handls_bl(char **cmd, char **arv, int *st, int i);
 void write_env(char **cmd, int *set);
-void perform_exit(char **cmd, char **arv, int *set , int i);
+void perform_exit(char **cmd, char **arv, int *set, int i);
 
 /*functions 3*/
 int check_value(char *str);

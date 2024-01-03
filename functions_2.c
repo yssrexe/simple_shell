@@ -70,6 +70,7 @@ char	*fn_strncpy(char *dest, char *src, unsigned int n)
 int	len(long nb)
 {
 	int	len = 0;
+
 	if (nb < 0)
 	{
 		nb *= -1;
@@ -80,7 +81,7 @@ int	len(long nb)
 		nb /= 10;
 		len++;
 	}
-	return(len);
+	return (len);
 }
 char	*fn_itoa(int nb)
 {
@@ -89,16 +90,16 @@ char	*fn_itoa(int nb)
 	int	i;
 
 	n = nb;
-	i = len(n);
-	if(!(str = (char *)malloc(i + 1)))
-		return(0);
+	i = len (n);
+	if (!(str = (char *)malloc(i + 1)))
+		return (0);
 	str[i--] = '\0';
 	if (n == 0)
 	{
 		str[0] = 48;
-		return(str);
+		return (str);
 	}
-	if(n < 0)
+	if (n < 0)
 	{
 		str[0] = '-';
 		n *= -1;
@@ -115,12 +116,14 @@ char	*fn_itoa(int nb)
 void fn_putstr(char *str)
 {
 	int i = 0;
+
 	if (str == NULL)
 		return;
-	
-	while(str[i] != '\0')
+
+	while (str[i] != '\0')
 	{
-		write(1 , &str[i] , 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
+
