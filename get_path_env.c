@@ -1,4 +1,9 @@
 #include "shell.h"
+/**
+ * fn_getenv - get environ function
+ * @str: string
+ * Return: return NULL or evn
+ */
 
 char *fn_getenv(char *str)
 {
@@ -39,11 +44,17 @@ char *fn_getenv(char *str)
 	return (NULL);
 }
 
+/**
+ * fn_getpath - the PATH environment variable
+ * @cmd: commands
+ * Return: return null and strdup of cmd
+ */
+
 char *fn_getpath(char *cmd)
 {
 	struct stat str;
 	int num = 0;
-	char* fcd = NULL, *dst, *environ_p;
+	char *fcd = NULL, *dst, *environ_p;
 
 	while (cmd[num])
 	{
@@ -55,12 +66,10 @@ char *fn_getpath(char *cmd)
 		}
 		num++;
 	}
-
 	environ_p = fn_getenv("PATH");
 	if (environ_p == NULL)
 		return (NULL);
 	dst = strtok(environ_p, ":");
-
 	while (dst != NULL)
 	{
 		size_t path_len = fn_strlen(dst), cmd_len = fn_strlen(cmd);
@@ -72,14 +81,10 @@ char *fn_getpath(char *cmd)
 			fn_strcat(fcd, "/");
 			fn_strcat(fcd, cmd);
 			if (stat(fcd, &str) == 0)
-			{
-				free(environ_p);
-				return (fcd);
-			}
+				free(environ_p), return (fcd);
 			else
 				free(fcd), fcd = NULL;
 		}
-
 		dst = strtok(NULL, ":");
 	}
 	free(environ_p);
