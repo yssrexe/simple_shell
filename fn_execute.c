@@ -3,6 +3,7 @@
  * fn_execute - execute function
  * @cmd: commands
  * @arv: argument value
+ * @num: value of an ineger
  * Return: executation cmd
  */
 
@@ -15,11 +16,10 @@ int	fn_execute(char **cmd, char **arv, int num)
 	tst_c = fn_getpath(cmd[0]);
 	if (tst_c == NULL)
 	{
-		writerror(arv[0], cmd[0], num); 
+		writerror(arv[0], cmd[0], num);
 		freeparam(cmd);
-		return(127);
+		return (127);
 	}
-	
 	son = fork();
 	if (son == 0)
 	{
