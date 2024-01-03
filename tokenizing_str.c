@@ -8,16 +8,12 @@
 
 char **fn_tokenizing(char *str)
 {
-	char *tkn;
-	int loop = 0;
-	int i = 0;
-	char **cmd = NULL;
-	char *lst = NULL;
+	int loop = 0, i = 0;
+	char *tkn, **cmd = NULL, *lst = NULL;
 
 	if (str == NULL)
 		return (NULL);
 	lst = fn_strdup(str);
-
 	tkn = strtok(lst, MNTS);
 	if (tkn == NULL)
 	{
