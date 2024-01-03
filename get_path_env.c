@@ -81,7 +81,10 @@ char *fn_getpath(char *cmd)
 			fn_strcat(fcd, "/");
 			fn_strcat(fcd, cmd);
 			if (stat(fcd, &str) == 0)
-				free(environ_p), return (fcd);
+			{
+				free(environ_p);
+				return (fcd);
+			}
 			else
 				free(fcd), fcd = NULL;
 		}
