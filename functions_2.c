@@ -67,6 +67,12 @@ char	*fn_strncpy(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 
+/**
+ * len - lenthing of strings
+ * @nb: numbers
+ * Return: return length
+ */
+
 int	len(long nb)
 {
 	int	len = 0;
@@ -83,6 +89,12 @@ int	len(long nb)
 	}
 	return (len);
 }
+
+/**
+ * fn_itoa - convert integer to string
+ * @nb: number
+ * Return: string of numbers
+ */
 char	*fn_itoa(int nb)
 {
 	char	*str;
@@ -90,8 +102,9 @@ char	*fn_itoa(int nb)
 	int	i;
 
 	n = nb;
-	i = len (n);
-	if (!(str = (char *)malloc(i + 1)))
+	i = len(n);
+	str = (char *)malloc(i + 1);
+	if (!str)
 		return (0);
 	str[i--] = '\0';
 	if (n == 0)
@@ -112,18 +125,3 @@ char	*fn_itoa(int nb)
 	}
 	return (str);
 }
-
-void fn_putstr(char *str)
-{
-	int i = 0;
-
-	if (str == NULL)
-		return;
-
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-

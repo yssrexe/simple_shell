@@ -16,3 +16,16 @@ int check_value(char *str)
 	return (1);
 }
 
+void fn_putstr(char *str)
+{
+	int i = 0;
+
+	if (str == NULL)
+		return;
+
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
