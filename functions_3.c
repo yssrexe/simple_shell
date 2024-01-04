@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * check_value - check the string if have a positive numbers
+ * @str: string
+ * Return: return 0 if false or 1 if true
+*/
 int check_value(char *str)
 {
 	int i = 0;
@@ -16,6 +21,11 @@ int check_value(char *str)
 	return (1);
 }
 
+/**
+ * fn_putstr - print string
+ * @str: string
+ * Return: ret 0 if false
+*/
 void fn_putstr(char *str)
 {
 	int i = 0;
