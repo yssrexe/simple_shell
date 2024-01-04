@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ * check_builtins - check builtins
+ * @cmd: commands
+ * Return: return 0 or 1
+*/
 int check_builtins(char *cmd)
 {
 	char *list[] = {"env", "exit", "setenv", "cd", NULL};
@@ -14,7 +19,13 @@ int check_builtins(char *cmd)
 	return (0);
 }
 
-
+/**
+ * handls_bl - handel builtin
+ * @cmd: commands
+ * @arv: argument victor
+ * @st: status
+ * @i: index
+*/
 void handls_bl(char **cmd, char **arv, int *st, int i)
 {
 
@@ -29,6 +40,11 @@ void handls_bl(char **cmd, char **arv, int *st, int i)
 
 }
 
+/**
+ * write_env - write environ
+ * @cmd: commands
+ * @set: status
+*/
 void write_env(char **cmd, int *set)
 {
 	int i = 0;
@@ -43,6 +59,14 @@ void write_env(char **cmd, int *set)
 	(*set) = 0;
 }
 
+/**
+ * perform_exit - exit shell function
+ * @cmd: command
+ * @arv: argument values
+ * @set: status
+ * @i: index
+ * Return: return 0
+*/
 void perform_exit(char **cmd, char **arv, int *set, int i)
 {
 	int per_ext = (*set);
