@@ -54,7 +54,7 @@ char *fn_getpath(char *cmd)
 {
 	struct stat str;
 	int num = 0;
-	char *fcd = NULL, *dst, *environ_p;
+	char *fcd, *dst, *environ_p;
 
 	while (cmd[num])
 	{
@@ -72,7 +72,7 @@ char *fn_getpath(char *cmd)
 	dst = strtok(environ_p, ":");
 	while (dst != NULL)
 	{
-		size_t path_len = fn_strlen(dst), cmd_len = fn_strlen(cmd);
+		int path_len = fn_strlen(dst), cmd_len = fn_strlen(cmd);
 
 		fcd = malloc(path_len + cmd_len + 2);
 		if (fcd != NULL)
@@ -85,10 +85,9 @@ char *fn_getpath(char *cmd)
 				free(environ_p);
 				return (fcd);
 			}
-			else
-				free(fcd), fcd = NULL;
+			free(fcd), fcd = NULL;
+			dst = strtok(NULL, ":");
 		}
-		dst = strtok(NULL, ":");
 	}
 	free(environ_p);
 	return (NULL);
